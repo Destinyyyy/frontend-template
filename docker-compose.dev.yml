@@ -1,0 +1,13 @@
+version: "3"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./dev.Dockerfile
+    volumes:
+      - .:/usr/app/
+      - frontend-deps:/usr/app/node_modules
+    ports:
+      - 3000:3000
+volumes:
+  frontend-deps:
